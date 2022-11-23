@@ -2,7 +2,7 @@
 
 $mobile: 320px;
 $tablet: 768px;
-$desktop: 1440px;
+$desktop: 1200px;
 
 * {
     box-sizing: border-box;
@@ -99,24 +99,26 @@ p {
 }
 
 // Gallery
-.container {
+.container,
+.gallery {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 25px;
+    width: 100%;
 
 
-    @media screen and (min-width: 480px) {
-        width: 480px;
+    @media screen and (min-width: $mobile) {
+        width: $mobile;
         margin-left: auto;
         margin-right: auto;
     }
 
-    @media screen and (min-width: 768px) {
-        width: 768px;
-    }
+        @media screen and (min-width: $tablet) {
+            width: $tablet;
+        }
 
-    @media screen and (min-width: 1440px) {
-        width: 1440px;
+    @media screen and (min-width: $desktop) {
+        width: $desktop;
     }
 }
 
@@ -124,19 +126,20 @@ p {
 .info {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    margin: calc(-1 * 20px / 2);
 }
 
-.gallery {
-    margin-left: -20px;
-    padding-top: 5px;
-    justify-content: center;
-}
 
 .gallery__link {
     margin-top: 20px;
     margin-left: 20px;
     min-width: 320px;
-    flex-basis: calc((100% - 80px) / 2);
+    margin: calc(20px / 2);
+    flex-basis: calc((100% - 20px * 5)/ 5);
     border: 2px solid rgb(241, 238, 238);
     border-radius: 10px;
     overflow: hidden;
@@ -161,9 +164,6 @@ p {
 }
 
 .info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     color: black;
     padding: 15px;
 }
